@@ -4,6 +4,7 @@ import morgan from "morgan";
 import logger from './utils/logger.js'
 import connectDB from "./config/db.js";
 import Image from "./models/image.js";
+import "dotenv/config"
 
 const app = express()
 

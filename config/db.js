@@ -1,13 +1,11 @@
 import mongoose from "mongoose"; 
 import logger from "../utils/logger.js";
-import secrets from "./secrets.js";
-
 
 const connectDB = () => {
-  mongoose.connect(secrets.mongoUri)
+  mongoose.connect(process.env.MONGO_SECRET_KEY)
   .then(res => {
     logger.debug("MongoDB Connected...")
-  }).catch(err => {
+  }).catch(err => { 
     logger.error(err.message)
     process.exit(0)
   })
